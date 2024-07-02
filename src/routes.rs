@@ -46,11 +46,11 @@ impl FeedQuery {
         }
 
         if let Some(author_reject) = &self.author_reject {
-            accepted &= !author_reject.0.is_match(&item.title);
+            accepted &= !author_reject.0.is_match(&item.author);
         }
 
         if let Some(author_allow) = &self.author_allow {
-            accepted &= author_allow.0.is_match(&item.title);
+            accepted &= author_allow.0.is_match(&item.authoer);
         }
 
         if let Some(url_reject) = &self.url_reject {
